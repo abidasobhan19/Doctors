@@ -22,10 +22,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         private LayoutInflater inflater;
         private Context context;
 
-    public UserAdapter(Context context) {
+    public UserAdapter(Context context, List<User> userList) {
         this.context = context;
         this.inflater = LayoutInflater.from(context);
-        this.userList = new ArrayList<>();
+        this.userList = new ArrayList<>(userList);
     }
 
 
@@ -35,7 +35,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
         View view = inflater.inflate(R.layout.activity_item_activity,parent,false);
         UserViewHolder userHolder = new UserViewHolder(view);
-        return null;
+        return userHolder;
     }
 
     @Override
@@ -49,14 +49,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @Override
     public int getItemCount() {
         return userList.size();
-    }
-    private int getPosition(User user){
-        for (User x:userList){
-            if(x.getName().equals(user.getName()) && x.getEmail().equals(user.getEmail())){
-                return userList.indexOf(x);
-            }
-        }
-        return -1;
     }
 
     public class UserViewHolder extends RecyclerView.ViewHolder {
