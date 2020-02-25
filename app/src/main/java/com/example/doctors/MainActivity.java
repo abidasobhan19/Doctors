@@ -1,6 +1,7 @@
 package com.example.doctors;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.doctors.Models.User;
 
@@ -18,7 +21,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-Button button;
+
+CardView cardone, cardtwo;
 
 
     @Override
@@ -26,17 +30,24 @@ Button button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = findViewById(R.id.btn);
-        button.setOnClickListener(this);
 
+//cardone = findViewById(R.id.card_one);
+cardtwo = findViewById(R.id.card_two);
+
+
+cardtwo.setOnClickListener(this);
+//cardone.setOnClickListener(this);
 
 
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this,DocMain.class);
-        startActivity(intent);
-
+        if (v==cardtwo) {
+            Intent intent = new Intent(MainActivity.this, DocMain.class);
+            startActivity(intent);
+        }else if(v==cardone){
+            Toast.makeText(this, "This Is On Under Constraction", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -1,28 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-   >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn"
-        android:textStyle="bold"
-        android:text="Doctors"
-        android:layout_gravity="center"
+>
 
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="@drawable/header_login"
+    android:id="@+id/header"
     />
 
-    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Doctors Directory"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:textColor="#ffff"
+        android:transformPivotX="50dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_two"
+        style="@style/Card"
+        android:layout_centerInParent="true"
+        android:layout_weight="0"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
 
 
-</LinearLayout>
+        <TextView
+            style="@style/textview"
+            android:text="CSCR" />
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-30dp"
+      android:layout_marginLeft="-50dp"
+
+        android:src="@drawable/circle" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="20dp"
+
+        android:src="@drawable/circletransparant" />
+</RelativeLayout>
