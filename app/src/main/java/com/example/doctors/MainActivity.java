@@ -30,23 +30,23 @@ CardView cardone, cardtwo;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-//cardone = findViewById(R.id.card_one);
-cardtwo = findViewById(R.id.card_two);
-
-
-cardtwo.setOnClickListener(this);
-//cardone.setOnClickListener(this);
+//
+////cardone = findViewById(R.id.card_one);
+cardone = findViewById(R.id.card_one);
+//
+//
+//cardtwo.setOnClickListener(this);
+cardone.setOnClickListener(this);
 
 
     }
 
     @Override
     public void onClick(View v) {
-        if (v==cardtwo) {
+        if (v==cardone) {
             Intent intent = new Intent(MainActivity.this, DocMain.class);
             startActivity(intent);
-        }else if(v==cardone){
+        }else if(v==cardtwo){
             Toast.makeText(this, "This Is On Under Constraction", Toast.LENGTH_SHORT).show();
         }
     }
